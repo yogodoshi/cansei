@@ -1,5 +1,6 @@
-# Pending to explaing here
+# A ser explicado
 
-- [ ] how to clone the repo
-- [ ] how to setup env vars
-- [ ] how to deploy to heroku
+- [ ] um pequeno "sobre" o projeto
+- [ ] como clonar o projeto
+- [ ] como setar as variáveis de ambiente
+- [ ] como deployar pro heroku
