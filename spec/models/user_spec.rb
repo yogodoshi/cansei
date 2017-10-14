@@ -18,15 +18,15 @@ RSpec.describe User, type: :model do
   end
 
   describe '.find_or_create_from_auth_hash' do
-    subject { User.find_or_create_from_auth_hash(OmniAuth.config.mock_auth[:twitter]) }
+    subject { described_class.find_or_create_from_auth_hash(OmniAuth.config.mock_auth[:twitter]) }
 
     context 'when the User doesnt exist in the database' do
-      let(:created_user) { User.last }
+      let(:created_user) { described_class.last }
 
       it 'creates the User with correct attributes' do
         expect do
           subject
-        end.to change { User.count }.by(1)
+        end.to change { described_class.count }.by(1)
 
         expect(created_user.provider).to eq('twitter')
         expect(created_user.uid).to eq('bathjJwvdhKjgfgh8Jd745J7dh5Qkgflbnczd65dfnw')
@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
       it 'updates the User with given attributes' do
         expect do
           subject
-        end.to_not change { User.count }
+        end.to_not change { described_class.count }
 
         user.reload
 
@@ -62,6 +62,14 @@ RSpec.describe User, type: :model do
       it 'returns the found user' do
         expect(subject).to eq(user)
       end
+    end
+  end
+
+  describe '.frequency_options_for_select' do
+    subject { described_class.frequency_options_for_select }
+
+    it 'returns an array of arrays with options for a "select" tag' do
+      expect(subject).to eq([["Darei uma pausa nas reclamações", "off"], ["Estou insatisfeito, a empresa tem que melhorar! (twittaremos 1 vez por semana)", "low"], ["Estou MUITO insatisfeito, já perdi várias horas da minha vida por causa deles! (twittaremos 1 vez por dia)", "medium"], ["Estou DE SACO CHEIO do péssimo serviço dessa empresa! Já reclamei várias vezes com eles! (twittaremos 1 vez por hora)", "high"]])
     end
   end
 end
