@@ -11,9 +11,9 @@
   <body>
     <nav>
       <% if current_user %>
-        <p>Signed in as <%= current_user.username %></p>
+        <p>Logado como <%= current_user.username %></p>
       <% else %>
-        <p><%= link_to 'Sign in with Twitter', '/auth/twitter' %></p>
+        <p><%= link_to 'Entrar com sua conta do Twitter', '/auth/twitter' %></p>
       <% end %>
     </nav>
 
