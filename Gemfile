@@ -20,6 +20,13 @@ gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Twitter authentication
+gem 'omniauth', '~> 1.7.1'
+gem 'omniauth-twitter', '~> 1.4.0'
+
+# load environment variables from .env into ENV in development
+gem 'dotenv-rails', '~> 2.2.1'
+
 group :development, :test do
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails', '~> 3.6.1'
