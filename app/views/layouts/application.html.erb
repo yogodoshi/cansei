@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <nav>
+      <% if current_user %>
+        <p>Signed in as <%= current_user.username %></p>
+      <% else %>
+        <p><%= link_to 'Sign in with Twitter', '/auth/twitter' %></p>
+      <% end %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
