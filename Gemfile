@@ -21,9 +21,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
+  gem 'pry-rails', '~> 0.3.6'
+  gem 'rspec-rails', '~> 3.6.1'
+  gem 'factory_girl_rails', '~> 4.8.0'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '~> 3.6.0'
 end
 
-group :development do
+group :test do
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'rails-controller-testing', '1.0.2'
 end
