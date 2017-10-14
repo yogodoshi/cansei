@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
         expect(created_user.token).to eq('1234')
         expect(created_user.secret).to eq('5678')
         expect(created_user.username).to eq('yogodoshi')
-        expect(created_user.profile_image).to eq('https://pbs.twimg.com/profile_images/849013196325302277/KlcHE1l1_400x400.jpg')
+        expect(created_user.profile_image).to eq('http://si0.twimg.com/sticky/default_profile_images/default_profile_2_normal.png')
       end
 
       it 'returns the created user' do
@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
         expect(user.token).to eq('1234')
         expect(user.secret).to eq('5678')
         expect(user.username).to eq('yogodoshi')
-        expect(user.profile_image).to eq('https://pbs.twimg.com/profile_images/849013196325302277/KlcHE1l1_400x400.jpg')
+        expect(user.profile_image).to eq('http://si0.twimg.com/sticky/default_profile_images/default_profile_2_normal.png')
       end
 
       it 'returns the found user' do
