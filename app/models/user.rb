@@ -13,6 +13,15 @@ class User < ApplicationRecord
   validates :provider, :uid, :username, :token, :secret, :profile_image, :frequency, presence: true
   validates :uid, uniqueness: { scope: :provider }
 
+  def twitter_access
+    {
+      consumer_key: ENV['TWITTER_API_KEY'],
+      consumer_secret: ENV['TWITTER_API_SECRET'],
+      access_token: token,
+      access_token_secret: secret
+    }
+  end
+
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
     user.update(

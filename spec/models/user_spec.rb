@@ -17,6 +17,22 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:uid).scoped_to(:provider) }
   end
 
+  describe '#twitter_access' do
+    let!(:user) { build(:user) }
+    let!(:user_access_hash) do
+      {
+        consumer_key: ENV['TWITTER_API_KEY'],
+        consumer_secret: ENV['TWITTER_API_SECRET'],
+        access_token: user.token,
+        access_token_secret: user.secret
+      }
+    end
+
+    it 'returns a hash with correct keys and values' do
+      expect(user.twitter_access).to eq(user_access_hash)
+    end
+  end
+
   describe '.find_or_create_from_auth_hash' do
     subject { described_class.find_or_create_from_auth_hash(OmniAuth.config.mock_auth[:twitter]) }
 
