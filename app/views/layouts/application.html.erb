@@ -11,7 +11,10 @@
   <body>
     <nav>
       <% if current_user %>
-        <p>Logado como <%= current_user.username %></p>
+        <p>
+          Logado como <%= current_user.username %>
+          (<%= link_to 'Sair', logout_path, method: :delete %>)
+        </p>
       <% else %>
         <p><%= link_to 'Entrar com sua conta do Twitter', '/auth/twitter' %></p>
       <% end %>
