@@ -8,6 +8,12 @@ class SessionsController < ApplicationController
     redirect_to root_path, success: "Logado como #{user.username} com sucesso!"
   end
 
+  def destroy
+    session.delete(:user_id)
+    flash[:success] = 'Deslogado com sucesso!'
+    redirect_to root_path
+  end
+
   private
 
   def auth_hash

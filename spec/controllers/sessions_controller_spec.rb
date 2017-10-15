@@ -38,4 +38,38 @@ RSpec.describe SessionsController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    subject { delete :destroy }
+
+    context 'when the user is logged in' do
+      let!(:user) { create(:user) }
+
+      before { sign_in user }
+
+      it 'deletes the session' do
+        expect do
+          subject
+        end.to change { session[:user_id] }.from(user.id).to(nil)
+      end
+
+      it 'redirects to #new with success flash message' do
+        subject
+        expect(flash[:success]).to eq('Deslogado com sucesso!')
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'when the user is not logged in' do
+      it 'deletes the session' do
+        expect(session[:user_id]).to eq(nil)
+      end
+
+      it 'redirects to #new with success flash message' do
+        subject
+        expect(flash[:success]).to eq('Deslogado com sucesso!')
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
 end

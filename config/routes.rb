@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   patch '/editar', to: 'users#update'
 
   get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/sair', to: 'sessions#destroy', as: :logout
 end
