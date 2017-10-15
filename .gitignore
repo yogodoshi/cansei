@@ -14,3 +14,4 @@ log/**/*
 tmp/**/*
 
 .env.development
+.env.test
