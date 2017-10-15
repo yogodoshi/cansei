@@ -27,6 +27,8 @@ gem 'omniauth-twitter', '~> 1.4.0'
 # load environment variables from .env into ENV in development
 gem 'dotenv-rails', '~> 2.2.1'
 
+gem 'twitter', '~> 6.1.0'
+
 group :development, :test do
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails', '~> 3.6.1'
