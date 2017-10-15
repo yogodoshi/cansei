@@ -55,4 +55,36 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'PATCH #update' do
+    subject { patch :update, params: { user: { frequency: 'medium' } } }
+
+    context 'when the user is not logged in' do
+      before do
+        subject
+      end
+
+      it 'redirects to #new' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'when the user is logged in' do
+      let!(:user) { create(:user, frequency: 'low') }
+
+      before { sign_in user }
+
+      it 'redirects to #edit with success flash message' do
+        subject
+        expect(response).to redirect_to(edit_user_path)
+        expect(flash[:success]).to eq('Frequência atualizada com sucesso!')
+      end
+
+      it 'updates the user frequency' do
+        expect do
+          subject
+        end.to change { user.reload.frequency }.from('low').to('medium')
+      end
+    end
+  end
 end

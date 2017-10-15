@@ -1,2 +1,7 @@
-<h2>Escolha quão insatisfeito você está com a empresa XYZ</h2>
-<p>Aqui vai o select com as opções e o botão de enviar</p>
+<%= form_for @user, url: edit_user_path(@user), method: :patch do |f| %>
+  <%= f.label :frequency, 'Escolha quão insatisfeito você está com a empresa XYZ' %>
+  <br />
+  <%= f.select :frequency, User.frequency_options_for_select %>
+  <br />
+  <%= f.submit 'Atualizar' %>
+<% end %>
