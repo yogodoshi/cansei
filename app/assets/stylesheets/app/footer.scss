@@ -1,0 +1,25 @@
+.footer {
+  margin-top: 80px;
+  padding: 0 20px 20px 20px;
+  font-size: 18px;
+  text-align: center;
+
+  p {
+    line-height: 1.5;
+    margin: 0;
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.footer-social-links {
+  margin-top: 20px;
+
+  svg {
+    fill: white;
+  }
+  .github-icon {
+    max-width: 30px;
+  }
+}

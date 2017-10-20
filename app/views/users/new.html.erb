@@ -1,1 +1,14 @@
-<p>Favor fazer o login com sua conta do twitter</p>
+<div class="wrapper welcome-page-section">
+  <p class="mbl"><%= Settings.brief_explanation %></p>
+  <p>Connect your Twitter account to auto-send messages at <%= Settings.company_name %> to encourage them to improve their service. You will be able to disconnect or stop sending messages any time.</p>
+</div>
+
+<div class="welcome-page-section">
+  <p>Please connect your Twitter account</p>
+
+  <div class="wrapper-sm">
+    <%= link_to '/auth/twitter', class: 'btn-twitter' do %>
+      <span class="btn-twitter-icon-wrapper"><%= render 'svg/twitter' %></span> <span class="btn-twitter-text">Sign in with your Twitter Account</span>
+    <% end %>
+  </div>
+</div>

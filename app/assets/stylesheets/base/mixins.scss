@@ -1,0 +1,19 @@
+@mixin for-phone-only {
+  @media (max-width: $media-breakpoint-mobile - 1) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: $media-breakpoint-mobile) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: $media-breakpoint-tablet) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $media-breakpoint-desktop) { @content; }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: $media-breakpoint-big-desktop) { @content; }
+}

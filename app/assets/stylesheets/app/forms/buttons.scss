@@ -1,0 +1,58 @@
+.btn {
+  display: inline-block;
+  padding: 20px;
+  border: 0;
+  color: white;
+  text-decoration: none;
+  background: $primary;
+  border-radius: 4px;
+  transition: all 100ms ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 16px;
+
+  &:hover {
+    background: darken($primary, 5%);
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-twitter {
+  @extend .btn;
+  position: relative;
+  display: flex;
+  padding: 20px;
+  background: $twitterColor;
+
+  .btn-twitter-icon-wrapper {
+    padding-right: 15px;
+    display: inline-flex;
+  }
+  .btn-twitter-text {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+  }
+  .twitter-icon {
+    height: auto;
+    width: 100%;
+    max-width: 35px;
+
+    @include for-tablet-portrait-up {
+      max-width: 28px;
+    }
+  }
+  &:hover {
+    background: darken($twitterColor, 5%);
+  }
+  @include for-tablet-portrait-up {
+    padding: 30px;
+    font-size: 22px;
+  }
+}

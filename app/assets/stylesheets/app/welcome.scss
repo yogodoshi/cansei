@@ -1,0 +1,28 @@
+.welcome-page-title {
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 44px;
+
+  @include for-tablet-portrait-up {
+    font-size: 60px;
+  }
+}
+
+.welcome-page-section {
+  padding: 0 10px;
+  margin-bottom: 60px;
+
+  p {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+.welcome-page-section--header {
+  margin-bottom: 60px;
+
+  @include for-tablet-portrait-up {
+    margin-bottom: 80px;
+  }
+}

@@ -1,0 +1,35 @@
+.wrapper {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper-sm {
+  @extend .wrapper;
+  max-width: 450px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Display
+
+.block {
+  display: block;
+}
+
+
+// Spaces
+
+.mbs {
+  margin-bottom: 15px;
+}
+
+.mbm {
+  margin-bottom: 25px;
+}
+
+.mbl {
+  margin-bottom: 40px;
+}
