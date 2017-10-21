@@ -3,6 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
+  describe 'GET #auth_failure' do
+    subject! { get :auth_failure }
+
+    it 'redirects to root_path with an error message' do
+      subject
+      expect(flash[:error]).to eq('Não foi possível obter suas informações do twitter, precisamos dela para twittar em seu nome')
+      expect(response).to redirect_to(root_path)
+    end
+  end
+
   describe 'GET #create' do
     let!(:params) { { "oauth_token"=>"biVSlAAAAAAA2xQzAAABXxy0pKU", "oauth_verifier"=>"p858cQzJ7ibg4L2v8qPE69OIjp3kJAKu", "controller"=>"sessions", "action"=>"create", "provider"=>"twitter" } }
 
