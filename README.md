@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/yogodoshi/cansei.svg?branch=master)](https://travis-ci.org/yogodoshi/cansei)
+
+
 # Sobre o projeto
 
 A idéia deste projeto surgiu após eu [yogodoshi](https://twitter.com/yogodoshi) estar de saco cheio de perder dezenas de horas da minha vida por causa do péssimo serviço e atendimento do Santander.
@@ -13,6 +16,7 @@ Mas da mesma forma que eu estou cansado de ser maltratado pelo Santander, outras
 
 :boom: surgiu a idéia de criar este app como um projeto open source durante para que outras pessoas possam utiliza-lo contra as empresas que preferirem :thumbsup:
 
+
 # Como usar o projeto
 
 ### 1. Clonar o repositório
@@ -26,6 +30,7 @@ Abra o arquivo `cansei/config/settings.yml` e altere os valores de cada chave. O
 
 Adicione pelo menos uns 10 tweets diferentes para ter uma boa variedade de mensagens, afinal, terão pessoas twittando diariamente estas mensagens.
 
+
 ### 3. Configurações da integração com o Twitter
 
 Para poder twittar em nome das pessoas, você precisa criar um app junto ao Twitter. Vamos ao passo-a-passo:
@@ -38,6 +43,7 @@ Para poder twittar em nome das pessoas, você precisa criar um app junto ao Twit
 6. Marque que você concorda com as regras e clique em "submit".
 7. Clique na aba "Keys and Access Tokens", onde você verá 2 importantes chaves "Consumer Key (API Key)" e "Consumer Secret (API Secret)". Você as usará no passo seguinte
 
+
 ### 4. Deploy para o Heroku
 
 Esse passo é opcional, você pode usar o host de sua preferência. Estamos sugerindo o Heroku por ter um plano gratuito e ser bem prático.
@@ -49,6 +55,7 @@ Esse passo é opcional, você pode usar o host de sua preferência. Estamos suge
 5. Você criará as seguintes variáveis: `TWITTER_API_KEY` e `TWITTER_API_SECRET`, em seus respectivos valores, você preencherá com as chaves encontradas na aplicação que criou junto ao twitter, no passo anterior.
 6. Volte ao terminal e rode `git push heroku` para subir a aplicação para o heroku
 7. Após o deploy ter sido finalizado com sucesso, rode `rake db:migrate` para fazer o setup do banco de dados e pronto! Seu app está pronto para ser utilizado!
+
 
 ### 5. Teste por uns dias
 
