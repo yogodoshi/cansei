@@ -1,21 +1,19 @@
-<div class="wrapper welcome-page-section">
-  <p>Your Twitter account is connected.</p>
-  <p>Select how often you want to send messages. You will be able to disconnect or stop sending messages any time.</p>
-</div>
-
-<%= form_for @user, url: edit_user_path(@user), method: :patch, html: { class: 'wrapper mbl' } do |f| %>
-  <%= f.label :frequency do %>
-    <p class="text-center">
-      How dissatisfied are you with <%= Settings.company_name %>?
-    </p>
-  <% end %>
-
-  <div class="wrapper-sm">
-    <div class="select">
-     <%= f.select :frequency, User.frequency_options_for_select %>
-     <div class="select-arrow"></div>
-   </div>
-
-    <%= f.submit 'Update', class: 'btn btn-block' %>
+<div data-controller="Users">
+  <div class="wrapper welcome-page-section">
+    <p>Your Twitter account is connected.</p>
+    <p>Select how often you want to send messages. You will be able to disconnect or stop sending messages any time.</p>
   </div>
-<% end %>
+
+  <%= form_for @user, url: edit_user_path(@user), method: :patch, html: { class: 'wrapper mbl' } do |f| %>
+    <%= f.label :frequency do %>
+      <p class="text-center">
+        How dissatisfied are you with <%= Settings.company_name %>?
+      </p>
+    <% end %>
+
+    <div class="wrapper-sm">
+      <%= f.select :frequency, User.frequency_options_for_select, {}, { data: { 'select': true } } %>
+      <%= f.submit 'Update', class: 'btn btn-block' %>
+    </div>
+  <% end %>
+</div>

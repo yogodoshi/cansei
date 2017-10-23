@@ -14,3 +14,14 @@ $media-breakpoint-mobile: 600px;
 $media-breakpoint-tablet: 900px;
 $media-breakpoint-desktop: 1200px;
 $media-breakpoint-big-desktop: 1800px;
+
+// Plugins
+
+$choices-bg-color: $primary !default;
+$choices-bg-color-dropdown: $primary !default;
+$choices-bg-color-dropdown-hover: darken($primary, 5%) !default;
+$choices-border-radius: 4px !default;
+$choices-keyline-color: $primary !default;
+$choices-primary-color: $primary !default;
+$choices-font-size-md: 18px !default;
+$choices-selection-padding: 20px;

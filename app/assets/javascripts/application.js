@@ -1,5 +1,6 @@
 //= require action_cable
 //= require rails-ujs
+//= require_tree ./vendor
 
 //  Application
 //
