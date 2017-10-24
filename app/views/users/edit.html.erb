@@ -1,7 +1,7 @@
 <%= form_for @user, url: edit_user_path(@user), method: :patch do |f| %>
-  <%= f.label :frequency, 'Escolha quão insatisfeito você está com a empresa XYZ' %>
+  <%= f.label :frequency, "Escolha quão insatisfeito você está com a empresa <%= Settings.company_name %>" %>
   <br />
   <%= f.select :frequency, User.frequency_options_for_select %>
   <br />
-  <%= f.submit 'Atualizar' %>
+  <%= f.submit 'Atualizar preferências' %>
 <% end %>

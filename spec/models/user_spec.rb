@@ -85,7 +85,7 @@ RSpec.describe User, type: :model do
     subject { described_class.frequency_options_for_select }
 
     it 'returns an array of arrays with options for a "select" tag' do
-      expect(subject).to eq([["Darei uma pausa nas reclamações", "off"], ["Estou insatisfeito, a empresa tem que melhorar! (twittaremos 1 vez por semana)", "low"], ["Estou MUITO insatisfeito, já perdi várias horas da minha vida por causa deles! (twittaremos 1 vez por dia)", "medium"], ["Estou DE SACO CHEIO do péssimo serviço dessa empresa! Já reclamei várias vezes com eles! (twittaremos 1 vez por hora)", "high"]])
+      expect(subject).to eq([['Darei uma pausa nas reclamações', 'off'], ['Um pouco (1 tweet por semana)', 'low'], ['Muito insatisfeito (1 tweet por dia)', 'medium'], ['Cansado de ser maltratado (1 tweet por hora)', 'high']])
     end
   end
 end

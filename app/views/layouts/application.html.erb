@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cansei</title>
+    <title><%= Settings.site_title %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -12,7 +12,7 @@
     <nav>
       <% if current_user %>
         <p>
-          Logado como <%= current_user.username %>
+          Logado como @<%= current_user.username %>
           (<%= link_to 'Sair', logout_path, method: :delete %>)
         </p>
       <% else %>
@@ -20,8 +20,8 @@
       <% end %>
     </nav>
 
-    <h1>Como funciona</h1>
-    <p>Breve explicação de como funciona</p>
+    <h1><%= Settings.site_title %></h1>
+    <p><%= Settings.brief_explanation %></p>
 
     <%= yield %>
   </body>
