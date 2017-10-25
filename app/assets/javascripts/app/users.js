@@ -8,7 +8,8 @@
     initSelect: function initSelect() {
       var choices = new Choices(this.select, {
         searchEnabled: false,
-        itemSelectText: ''
+        itemSelectText: '',
+        shouldSort: false
       });
     }
   }
