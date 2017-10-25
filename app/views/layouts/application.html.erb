@@ -27,8 +27,8 @@
     <div class="wrapper-sm text-center">
       <% if current_user %>
         <p>
-          You are logged in as @<%= current_user.username %>.
-          <%= link_to 'Log out', logout_path, method: :delete %>
+          Você está logado como @<%= current_user.username %>.
+          <%= link_to 'Deslogar', logout_path, method: :delete %>
         </p>
       <% end %>
     </div>
