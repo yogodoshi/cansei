@@ -62,3 +62,8 @@ Esse passo é opcional, você pode usar o host de sua preferência. Estamos suge
 Se você não for um programador Ruby ou não estiver acostumado com aplicações web, sugiro ser o primeiro a testar o app. Deixe que o app twitte em suas conta do twitter por uns dias, veja se as mensagens que você adicionou fazem sentido no contexto do Twitter, etc.
 
 Qualquer dúvida, [crie uma issue](https://github.com/yogodoshi/cansei/issues) no repositório que iremos lhe ajudar :)
+
+
+# Licença
+
+Esse projeto segue a licença: [MIT license](opensource.org/licenses/MIT)
