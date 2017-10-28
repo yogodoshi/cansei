@@ -25,10 +25,6 @@ a {
 
 .app-page {
   padding-top: 80px;
-
-  @include for-tablet-portrait-up {
-    padding-top: 120px;
-  }
 }
 
 .alert {
