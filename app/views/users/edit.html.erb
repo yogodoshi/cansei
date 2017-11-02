@@ -1,7 +1,18 @@
-<%= form_for @user, url: edit_user_path(@user), method: :patch do |f| %>
-  <%= f.label :frequency, "Escolha quão insatisfeito você está com a empresa <%= Settings.company_name %>" %>
-  <br />
-  <%= f.select :frequency, User.frequency_options_for_select %>
-  <br />
-  <%= f.submit 'Atualizar preferências' %>
-<% end %>
+<div data-controller="Users">
+  <div class="wrapper welcome-page-section">
+    <p>Selecione a frequência com que deseja enviar tweets para a empresa <%= Settings.company_name %>. Você pode parar o envio a qualquer momento.</p>
+  </div>
+
+  <%= form_for @user, url: edit_user_path(@user), method: :patch, html: { class: 'wrapper mbl' } do |f| %>
+    <%= f.label :frequency do %>
+      <p class="text-center">
+        Quão insatisfeito você está com a empresa <%= Settings.company_name %>?
+      </p>
+    <% end %>
+
+    <div class="wrapper-sm">
+      <%= f.select :frequency, User.frequency_options_for_select, {}, { data: { 'select': true } } %>
+      <%= f.submit 'Confirmar', class: 'btn btn-block' %>
+    </div>
+  <% end %>
+</div>
