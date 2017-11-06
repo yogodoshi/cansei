@@ -78,3 +78,8 @@ Qualquer dúvida, [crie uma issue](https://github.com/yogodoshi/cansei/issues) n
   - OSX - `$ brew install postgresql` or [Postgres.app](http://postgresapp.com/)
   - Linux - `$ sudo apt-get install postgresql`
   - Windows - [PostgreSQL for Windows](http://www.postgresql.org/download/windows/)
+
+
+# Licença
+
+Esse projeto segue a licença: [MIT license](opensource.org/licenses/MIT)
