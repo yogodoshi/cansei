@@ -1,1 +1,19 @@
-<p>Favor fazer o login com sua conta do twitter</p>
+<div class="wrapper welcome-page-section">
+  <p class="mbl"><%= Settings.brief_explanation %></p>
+  <p>Conecte sua conta do Twitter para começar a enviar mensagens a empresa <%= Settings.company_name %> reclamando sobre o serviço/atendimento deles até que eles façam algo para melhorá-lo.</p>
+</div>
+
+<div class="welcome-page-section">
+  <p>
+    Clique abaixo para se juntar a nós!
+    <br />
+    (você poderá parar o envio de mensagens a qualquer momento)
+  </p>
+
+  <div class="wrapper-sm">
+    <%= link_to '/auth/twitter', class: 'btn-twitter' do %>
+      <span class="btn-twitter-icon-wrapper"><%= render 'svg/twitter' %></span>
+      <span class="btn-twitter-text">Entrar com meu twitter</span>
+    <% end %>
+  </div>
+</div>

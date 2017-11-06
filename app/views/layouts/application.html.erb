@@ -2,27 +2,38 @@
 <html>
   <head>
     <title><%= Settings.site_title %></title>
+    <meta name="description" content="<%= Settings.brief_explanation %>">
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= render 'scripts/google_analytics' %>
   </head>
+  <body class="app-page">
+    <%= render 'shared/header' %>
 
-  <body>
-    <nav>
-      <% if current_user %>
-        <p>
-          Logado como @<%= current_user.username %>
-          (<%= link_to 'Sair', logout_path, method: :delete %>)
-        </p>
-      <% else %>
-        <p><%= link_to 'Entrar com sua conta do Twitter', '/auth/twitter' %></p>
-      <% end %>
-    </nav>
-
-    <h1><%= Settings.site_title %></h1>
-    <p><%= Settings.brief_explanation %></p>
+    <% flash.each do |name, msg| %>
+      <div class="<%= "alert alert-#{name}" %>">
+        <%= msg %>
+      </div>
+    <% end %>
 
     <%= yield %>
+
+    <div class="wrapper-sm text-center">
+      <% if current_user %>
+        <p>
+          Você está logado como @<%= current_user.username %>.
+          <%= link_to 'Deslogar', logout_path, method: :delete %>
+        </p>
+      <% end %>
+    </div>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>

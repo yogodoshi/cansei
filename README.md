@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/yogodoshi/cansei.svg?branch=master)](https://travis-ci.org/yogodoshi/cansei)
 
 
-# Sobre o projeto
+# Cansei
 
 A idéia deste projeto surgiu após eu [yogodoshi](https://twitter.com/yogodoshi) estar de saco cheio de perder dezenas de horas da minha vida por causa do péssimo serviço e atendimento do Santander.
 
@@ -17,11 +17,18 @@ Mas da mesma forma que eu estou cansado de ser maltratado pelo Santander, outras
 :boom: surgiu a idéia de criar este app como um projeto open source durante para que outras pessoas possam utiliza-lo contra as empresas que preferirem :thumbsup:
 
 
+# Dependências
+
+- terminal/linha de comando
+- Git
+  - MacOS: `$ brew install git`
+
+
 # Como usar o projeto
 
 ### 1. Clonar o repositório
 
-No terminal rode `git clone git@github.com:yogodoshi/cansei.git` e depois `cd cansei` para entrar na pasta.
+No terminal rode `$ git clone git@github.com:yogodoshi/cansei.git` e depois `$ cd cansei` para entrar na pasta.
 
 
 ### 2. Configurações do app
@@ -53,8 +60,8 @@ Esse passo é opcional, você pode usar o host de sua preferência. Estamos suge
 3. Você estará na aba "deploy", siga os passos da seção "Existing Git repository".
 4. Clique na aba "Settings", depois em "Reveal config vars"
 5. Você criará as seguintes variáveis: `TWITTER_API_KEY` e `TWITTER_API_SECRET`, em seus respectivos valores, você preencherá com as chaves encontradas na aplicação que criou junto ao twitter, no passo anterior.
-6. Volte ao terminal e rode `git push heroku` para subir a aplicação para o heroku
-7. Após o deploy ter sido finalizado com sucesso, rode `rake db:migrate` para fazer o setup do banco de dados e pronto! Seu app está pronto para ser utilizado!
+6. Volte ao terminal e rode `$ git push heroku` para subir a aplicação para o heroku
+7. Após o deploy ter sido finalizado com sucesso, rode `$ heroku run rake db:migrate` para fazer o setup do banco de dados e pronto! Seu app está pronto para ser utilizado!
 
 
 ### 5. Teste por uns dias
@@ -62,6 +69,15 @@ Esse passo é opcional, você pode usar o host de sua preferência. Estamos suge
 Se você não for um programador Ruby ou não estiver acostumado com aplicações web, sugiro ser o primeiro a testar o app. Deixe que o app twitte em suas conta do twitter por uns dias, veja se as mensagens que você adicionou fazem sentido no contexto do Twitter, etc.
 
 Qualquer dúvida, [crie uma issue](https://github.com/yogodoshi/cansei/issues) no repositório que iremos lhe ajudar :)
+
+
+# Dependências (caso queira modificar o site além do tutorial ou rodar o projeto localmente)
+
+- Ruby 2.4 (we suggest using [RVM](http://rvm.io))
+- [PostgreSQL](http://www.postgresql.org/)
+  - OSX - `$ brew install postgresql` or [Postgres.app](http://postgresapp.com/)
+  - Linux - `$ sudo apt-get install postgresql`
+  - Windows - [PostgreSQL for Windows](http://www.postgresql.org/download/windows/)
 
 
 # Licença

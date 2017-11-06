@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = user.id
 
+    flash[:success] = "Logado como #{user.username} com sucesso!"
     redirect_to root_path, success: "Logado como #{user.username} com sucesso!"
   end
 

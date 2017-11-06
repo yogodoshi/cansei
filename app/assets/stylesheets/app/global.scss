@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,800');
+
+html {
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: 18px;
+  background: $backgroundColor;
+  background-image: linear-gradient(to bottom, $backgroundColor, #D94A4A);
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.app-page {
+  padding-top: 80px;
+}
+
+.alert {
+  @extend .wrapper;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 60px;
+  border: 2px solid darken($primary, 5%);
+  text-align: center;
+  border-radius: 4px;
+}

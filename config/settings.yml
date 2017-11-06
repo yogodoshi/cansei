@@ -1,6 +1,6 @@
 company_name: Santander
-site_title: Cansei do péssimo serviço e atendimento do Santander
-brief_explanation: O Santander já me fez perder dezenas de horas da minha vida com seu péssimo serviço e atendimento ao consumidor. Queremos fazer algo sobre isso.
+site_title: Cansei do atendimento do Santander
+brief_explanation: O Santander já nos fez perder dezenas de horas das nossas vidas com seu péssimo serviço e atendimento. Juntos vamos tentar mudar essa situação!
 tweet_messages:
   - '@santander_br venho por meio deste tweet mostrar minha insatisfação com o serviço prestado por vocês'
   - '@santander_br o atendimento ao consumidor de vocês é péssimo, dá pra melhorar e muito!'
@@ -34,3 +34,4 @@ tweet_messages:
   - 'Serviço no Brasil é sempre ruim, mas o do @santander_br consegue ser o pior'
   - 'Precisa ligar pro @santander_br pra resolver algo? Se prepare pra esperar 20 minutos pra ser atendido'
   - 'Aquela promessa de resolver tudo pelo app do @santander_br é só promessa mesmo...'
+google_analytics:
