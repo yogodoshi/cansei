@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 desc 'Tweet from the users that choose to do it weekly'
 task tweet_weekly_to_the_company: :environment do
   if Time.current.wday == 1 # Check if its monday as heroku scheduler doesnt have "weekly frequency"

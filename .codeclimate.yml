@@ -18,6 +18,8 @@ engines:
       IrresponsibleModule:
         enabled: false
 exclude_paths:
+  - config.ru
+  - bin/
   - db/
   - "**/node_modules/"
   - "**/spec/"

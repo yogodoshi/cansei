@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'users#new'
   get '/editar', to: 'users#edit', as: :edit_user
