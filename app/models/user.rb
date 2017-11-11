@@ -6,7 +6,7 @@ class User < ApplicationRecord
     'low' => 'Bem insatisfeito (1 tweet por semana)',
     'medium' => 'Ficando estressado (1 tweet por dia)',
     'high' => 'De saco cheio (1 tweet por hora)'
-  }
+  }.freeze
 
   enum frequency: { off: 0, low: 1, medium: 2, high: 3 }
 

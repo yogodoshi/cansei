@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -11,9 +11,9 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-gem 'normalize-rails'
 gem 'autoprefixer-rails'
+gem 'normalize-rails'
+gem 'sass-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Twitter authentication
@@ -36,14 +36,15 @@ group :production do
 end
 
 group :development, :test do
+  gem 'capybara', '~> 2.13'
+  gem 'factory_girl_rails', '~> 4.8.0'
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails', '~> 3.6.1'
-  gem 'factory_girl_rails', '~> 4.8.0'
-  gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '~> 3.6.0'
 end
 
 group :test do
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'rails-controller-testing', '1.0.2'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'simplecov', require: false
 end

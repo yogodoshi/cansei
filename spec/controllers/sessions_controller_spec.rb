@@ -14,7 +14,7 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe 'GET #create' do
-    let!(:params) { { "oauth_token"=>"biVSlAAAAAAA2xQzAAABXxy0pKU", "oauth_verifier"=>"p858cQzJ7ibg4L2v8qPE69OIjp3kJAKu", "controller"=>"sessions", "action"=>"create", "provider"=>"twitter" } }
+    let!(:params) { { 'oauth_token' => 'biVSlAAAAAAA2xQzAAABXxy0pKU', 'oauth_verifier' => 'p858cQzJ7ibg4L2v8qPE69OIjp3kJAKu', 'controller' => 'sessions', 'action' => 'create', 'provider' => 'twitter' } }
 
     subject { get :create, params: params }
 

@@ -7,13 +7,11 @@ class TwitterService
   end
 
   def tweet_to_the_company
-    begin
-      @client.update(random_complain_message)
-    rescue Twitter::Error::Unauthorized => exception # invalid or expired twitter token
-      # do nothing for now
-    rescue Twitter::Error::Forbidden => exception
-      # do nothing for now
-    end
+    @client.update(random_complain_message)
+  rescue Twitter::Error::Unauthorized => exception # invalid or expired twitter token
+    # do nothing for now
+  rescue Twitter::Error::Forbidden => exception
+    # do nothing for now
   end
 
   private
