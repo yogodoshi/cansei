@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/yogodoshi/cansei.svg?branch=master)](https://travis-ci.org/yogodoshi/cansei)
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e5819df6bc79eb7e8b25/test_coverage)](https://codeclimate.com/github/yogodoshi/cansei/test_coverage)
 
 # Cansei
 
