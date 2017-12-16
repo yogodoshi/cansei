@@ -3,11 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe TwitterService do
-  describe '#tweet_to_the_company' do
+  describe '#tweet_a_complaint' do
     let!(:user) { build(:user) }
     let!(:twitter_client_double) { double('Twitter::REST::Client') }
 
-    subject { described_class.new(user).tweet_to_the_company }
+    subject { described_class.new(user).tweet_a_complaint }
 
     before do
       allow(Twitter::REST::Client).to receive(:new).with(user.twitter_access).and_return(twitter_client_double)

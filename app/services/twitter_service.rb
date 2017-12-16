@@ -6,7 +6,7 @@ class TwitterService
     @client = Twitter::REST::Client.new(@user.twitter_access)
   end
 
-  def tweet_to_the_company
+  def tweet_a_complaint
     @client.update(random_complain_message)
   rescue Twitter::Error::Unauthorized => exception # invalid or expired twitter token
     # do nothing for now
