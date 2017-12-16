@@ -17,6 +17,14 @@ class TwitterService
   private
 
   def random_complain_message
-    Settings.tweet_messages.sample
+    if Random.new.rand(1..7) == 1
+      share_service_message
+    else
+      Settings.tweet_messages.sample
+    end
+  end
+
+  def share_service_message
+    "Também está de saco cheio do mau serviço prestado pela empresa #{Settings.company_name}? Junte sua voz a nossa: #{Settings.site_url}"
   end
 end

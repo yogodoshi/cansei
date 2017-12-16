@@ -14,9 +14,22 @@ RSpec.describe TwitterService do
     end
 
     context 'success' do
-      it 'sends a tweet with one of the random messages' do
-        expect(twitter_client_double).to receive(:update).with(kind_of(String)).and_return(true)
-        subject
+      context 'when random returns any number other than 1' do
+        before { expect_any_instance_of(Random).to receive(:rand).and_return(2) }
+
+        it 'sends a tweet with one of the random messages' do
+          expect(twitter_client_double).to receive(:update).with(kind_of(String)).and_return(true)
+          subject
+        end
+      end
+
+      context 'when random returns 1' do
+        before { expect_any_instance_of(Random).to receive(:rand).and_return(1) }
+
+        it 'sends a tweet with the message that shares the app url' do
+          expect(twitter_client_double).to receive(:update).with("Também está de saco cheio do mau serviço prestado pela empresa #{Settings.company_name}? Junte sua voz a nossa: #{Settings.site_url}").and_return(true)
+          subject
+        end
       end
     end
 
